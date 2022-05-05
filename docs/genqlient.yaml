@@ -79,7 +79,7 @@ client_getter: "github.com/you/yourpkg.GetClient"
 
 
 # If set, fields with a struct type will default to having
-# the "pointer: true, omitempty: true" flag.
+# the "pointer: true" flag.
 #
 # This can be useful for struct schema where it would be burdensome
 # to manually set the flags on a large number of fields.
@@ -87,7 +87,16 @@ client_getter: "github.com/you/yourpkg.GetClient"
 # Defaults to false.
 use_struct_references: boolean
 
-# If set, generated code will have a third return parameter of type 
+# If set, optional fields will default to having the
+# "pointer: true, omitempty: true" flag.
+#
+# This can be useful for struct schema where it would be burdensome
+# to manually set the flags on a large number of fields.
+#
+# Defaults to false.
+optional_pointers: boolean
+
+# If set, generated code will have a third return parameter of type
 # map[string]interface{}. This will contain the optional values
 # of the Extensions field send from Servers.
 # ref.: https://spec.graphql.org/October2021/#sec-Response-Format

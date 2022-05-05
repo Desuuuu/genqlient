@@ -184,7 +184,7 @@ func (g *generator) convertArguments(
 			GoType:      goTyp,
 			JSONName:    arg.Variable,
 			GraphQLName: arg.Variable,
-			Omitempty:   options.GetOmitempty(),
+			Omitempty:   options.GetOmitempty(g.Config.OptionalPointers && !arg.Type.NonNull),
 		}
 	}
 	goTyp := &goStructType{
@@ -245,14 +245,14 @@ func (g *generator) convertType(
 		namePrefix, def, typ.Position, selectionSet, options, queryOptions)
 
 	if g.getStructReference(def) {
-		if options.Pointer == nil || *options.Pointer {
+		if options.GetPointer(true) {
 			goTyp = &goPointerType{goTyp}
 		}
-		if options.Omitempty == nil || *options.Omitempty {
+		if options.GetOmitempty(g.Config.OptionalPointers && !typ.NonNull) {
 			oe := true
 			options.Omitempty = &oe
 		}
-	} else if options.GetPointer() {
+	} else if options.GetPointer(g.Config.OptionalPointers && !typ.NonNull) {
 		// Whatever we get, wrap it in a pointer.  (Because of the way the
 		// options work, recursing here isn't as connvenient.)
 		// Note this does []*T or [][]*T, not e.g. *[][]T.  See #16.
@@ -436,7 +436,7 @@ func (g *generator) convertDefinition(
 				JSONName:    field.Name,
 				GraphQLName: field.Name,
 				Description: field.Description,
-				Omitempty:   fieldOptions.GetOmitempty(),
+				Omitempty:   fieldOptions.GetOmitempty(g.Config.OptionalPointers && !field.Type.NonNull),
 			}
 		}
 		return goType, nil

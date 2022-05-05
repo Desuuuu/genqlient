@@ -173,6 +173,10 @@ func TestGenerateWithConfig(t *testing.T) {
 			StructReferences: true,
 			Generated:        "generated-structrefs.go",
 		}},
+		{"OptionalPointers", "", &Config{
+			OptionalPointers: true,
+			Generated:        "generated-optionalpointers.go",
+		}},
 		{"NoContext", "", &Config{
 			Generated:   "generated.go",
 			ContextType: "-",
