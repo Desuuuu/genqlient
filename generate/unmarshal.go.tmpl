@@ -50,7 +50,7 @@ func (v *{{.GoName}}) UnmarshalJSON(b []byte) error {
         {{end -}}
         {{/* TODO(benkraft): In principle you might have a field-name that
              conflicts with this one; avoid that. */ -}}
-        {{ref "github.com/Khan/genqlient/graphql.NoUnmarshalJSON"}}
+        {{ref "github.com/Desuuuu/genqlient/graphql.NoUnmarshalJSON"}}
     }
     firstPass.{{.GoName}} = v
 
@@ -66,7 +66,7 @@ func (v *{{.GoName}}) UnmarshalJSON(b []byte) error {
     {{/* Embedded fields are easier: we just unmarshal the same input into
          them.  (They're also easier because they can't be lists, since they
          arise from GraphQL fragment spreads.)
-         
+
          Note that our behavior if you have two fields of the same name via
          different embeds differs from ordinary json-unmarshaling: we unmarshal
          into *all* of the fields.  See goStructType.FlattenedFields in
@@ -95,7 +95,7 @@ func (v *{{.GoName}}) UnmarshalJSON(b []byte) error {
                 // pointer at the innermost level, but it's easiest to be
                 // consistent.)
                 dst := &(*dst)[i]
-           
+
                 // (now we have `dst *MyType` and `src json.RawMessage`)
                 __unmarshalMyType(dst, src)
 

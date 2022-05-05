@@ -4,7 +4,7 @@ func {{.Name}}(
     ctx {{ref .Config.ContextType}},
     {{end}}
     {{- if not .Config.ClientGetter -}}
-    client {{ref "github.com/Khan/genqlient/graphql.Client"}},
+    client {{ref "github.com/Desuuuu/genqlient/graphql.Client"}},
     {{end}}
     {{- if .Input -}}
     {{- range .Input.Fields -}}
@@ -41,6 +41,6 @@ func {{.Name}}(
         req,
         resp,
     )
-	
+
     return &data, {{if .Config.Extensions -}}resp.Extensions,{{end -}} err
 }

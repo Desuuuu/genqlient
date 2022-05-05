@@ -1,5 +1,5 @@
 # genqlient.yaml is genqlient's configuration file.  This genqlient.yaml is an
-# example; use `go run github.com/Khan/genqlient --init` to generate a simple
+# example; use `go run github.com/Desuuuu/genqlient --init` to generate a simple
 # starting point.  By default, genqlient looks for the configuration file
 # named [.]genqlient.y[a]ml in the current directory or any ancestor; or the
 # filename may be given as an argument.
@@ -155,7 +155,7 @@ bindings:
     # Note that the `omitempty` option is ignored for types with custom
     # marshalers; the custom marshaler can of course choose to map any value it
     # wishes to `"null"` which in GraphQL has the same effect.
-    # 
+    #
     # The default is to use ordinary JSON-marshaling.
     marshaler: github.com/you/yourpkg.MarshalDateTime
     # Optionally, the fully-qualified name of the function to use when
@@ -169,7 +169,7 @@ bindings:
     #  unmarshaler: github.com/you/yourpkg.UnmarshalMyType
     # and that function is defined as e.g.:
     #  func UnmarshalMyType(b []byte, v *MyType) error
-    # 
+    #
     # The default is to use ordinary JSON-unmarshaling.
     unmarshaler: github.com/you/yourpkg.UnmarshalDateTime
 
@@ -179,7 +179,7 @@ bindings:
     # If set, a GraphQL selection which must exactly match the fields
     # requested whenever this type is used.  Only applies if the GraphQL type
     # is a composite output type (object, interface, or union).
-    # 
+    #
     # This is useful if Type is a struct whose UnmarshalJSON or other methods
     # expect that you requested certain fields.  For example, given the below
     # config, genqlient will reject if you make a query
@@ -187,7 +187,7 @@ bindings:
     # The fields must match exactly, including the ordering: "{ name id }"
     # will be rejected.  But the arguments and directives, if any, need not
     # match.
-    # 
+    #
     # TODO(benkraft): Also add ExpectIncludesFields and ExpectSubsetOfFields,
     # or something, if you want to say, for example, that you have to request
     # certain fields but others are optional.

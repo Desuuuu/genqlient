@@ -14,8 +14,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/Khan/genqlient/graphql"
-	"github.com/Khan/genqlient/internal/integration/server"
+	"github.com/Desuuuu/genqlient/graphql"
+	"github.com/Desuuuu/genqlient/internal/integration/server"
 )
 
 func TestSimpleQuery(t *testing.T) {
@@ -530,7 +530,7 @@ func TestNamedFragments(t *testing.T) {
 		...MoreUserFields
 		luckyNumber
 	}
-	
+
 	fragment UserFields on User {
 		id
 		...LuckyFields
@@ -655,7 +655,7 @@ func TestFlatten(t *testing.T) {
 	fragment InnerLuckyFields on Lucky {
 		luckyNumber
 	}
-	
+
 	fragment QueryFragment on Query {
 		beings(ids: $ids) {
 			__typename id
@@ -738,4 +738,4 @@ func TestGeneratedCode(t *testing.T) {
 	RunGenerateTest(t, "internal/integration/genqlient.yaml")
 }
 
-//go:generate go run github.com/Khan/genqlient genqlient.yaml
+//go:generate go run github.com/Desuuuu/genqlient genqlient.yaml

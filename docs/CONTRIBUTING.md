@@ -1,6 +1,6 @@
 # Contributing to genqlient
 
-genqlient welcomes contributions from the community!  Our [help wanted](https://github.com/Khan/genqlient/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) label tags issues where community help is especially welcome, and [good first issue](https://github.com/Khan/genqlient/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) lists issues that are likely most approachable for new contributors.
+genqlient welcomes contributions from the community!  Our [help wanted](https://github.com/Desuuuu/genqlient/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) label tags issues where community help is especially welcome, and [good first issue](https://github.com/Desuuuu/genqlient/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) lists issues that are likely most approachable for new contributors.
 
 While we're on the subject, Khan Academy is a non-profit organization with a mission to provide a free, world-class education to anyone, anywhere. If you're looking for other ways to help us, you can help us in that mission by [donating](https://khanacademy.org/donate) or looking at [career opportunities](https://khanacademy.org/careers).
 
