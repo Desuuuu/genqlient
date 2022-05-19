@@ -184,7 +184,7 @@ func (g *generator) convertArguments(
 			GoType:      goTyp,
 			JSONName:    arg.Variable,
 			GraphQLName: arg.Variable,
-			Omitempty:   options.GetOmitempty(g.Config.OptionalPointers && !arg.Type.NonNull),
+			Omitempty:   options.GetOmitempty(),
 		}
 	}
 	goTyp := &goStructType{
@@ -248,7 +248,7 @@ func (g *generator) convertType(
 		if options.GetPointer(true) {
 			goTyp = &goPointerType{goTyp}
 		}
-		if options.GetOmitempty(g.Config.OptionalPointers && !typ.NonNull) {
+		if options.GetOmitempty() {
 			oe := true
 			options.Omitempty = &oe
 		}
@@ -436,7 +436,7 @@ func (g *generator) convertDefinition(
 				JSONName:    field.Name,
 				GraphQLName: field.Name,
 				Description: field.Description,
-				Omitempty:   fieldOptions.GetOmitempty(g.Config.OptionalPointers && !field.Type.NonNull),
+				Omitempty:   fieldOptions.GetOmitempty(),
 			}
 		}
 		return goType, nil
