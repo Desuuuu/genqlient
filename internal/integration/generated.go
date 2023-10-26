@@ -128,10 +128,24 @@ type AnimalFieldsOwnerBeing interface {
 	GetTypename() string
 	// GetId returns the interface-field "id" from its implementation.
 	GetId() string
+	GetBeingUser() (*AnimalFieldsOwnerUser, bool)
+	GetBeingAnimal() (*AnimalFieldsOwnerAnimal, bool)
 }
 
-func (v *AnimalFieldsOwnerUser) implementsGraphQLInterfaceAnimalFieldsOwnerBeing()   {}
+func (v *AnimalFieldsOwnerUser) implementsGraphQLInterfaceAnimalFieldsOwnerBeing() {}
+func (v *AnimalFieldsOwnerUser) GetBeingUser() (*AnimalFieldsOwnerUser, bool) {
+	return v, true
+}
+func (v *AnimalFieldsOwnerUser) GetBeingAnimal() (*AnimalFieldsOwnerAnimal, bool) {
+	return nil, false
+}
 func (v *AnimalFieldsOwnerAnimal) implementsGraphQLInterfaceAnimalFieldsOwnerBeing() {}
+func (v *AnimalFieldsOwnerAnimal) GetBeingUser() (*AnimalFieldsOwnerUser, bool) {
+	return nil, false
+}
+func (v *AnimalFieldsOwnerAnimal) GetBeingAnimal() (*AnimalFieldsOwnerAnimal, bool) {
+	return v, true
+}
 
 func __unmarshalAnimalFieldsOwnerBeing(b []byte, v *AnimalFieldsOwnerBeing) error {
 	if string(b) == "null" {
@@ -295,10 +309,24 @@ type InnerBeingFields interface {
 	GetId() string
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetInnerBeingFieldsUser() (*InnerBeingFieldsUser, bool)
+	GetInnerBeingFieldsAnimal() (*InnerBeingFieldsAnimal, bool)
 }
 
-func (v *InnerBeingFieldsUser) implementsGraphQLInterfaceInnerBeingFields()   {}
+func (v *InnerBeingFieldsUser) implementsGraphQLInterfaceInnerBeingFields() {}
+func (v *InnerBeingFieldsUser) GetInnerBeingFieldsUser() (*InnerBeingFieldsUser, bool) {
+	return v, true
+}
+func (v *InnerBeingFieldsUser) GetInnerBeingFieldsAnimal() (*InnerBeingFieldsAnimal, bool) {
+	return nil, false
+}
 func (v *InnerBeingFieldsAnimal) implementsGraphQLInterfaceInnerBeingFields() {}
+func (v *InnerBeingFieldsAnimal) GetInnerBeingFieldsUser() (*InnerBeingFieldsUser, bool) {
+	return nil, false
+}
+func (v *InnerBeingFieldsAnimal) GetInnerBeingFieldsAnimal() (*InnerBeingFieldsAnimal, bool) {
+	return v, true
+}
 
 func __unmarshalInnerBeingFields(b []byte, v *InnerBeingFields) error {
 	if string(b) == "null" {
@@ -393,9 +421,13 @@ type InnerLuckyFields interface {
 	implementsGraphQLInterfaceInnerLuckyFields()
 	// GetLuckyNumber returns the interface-field "luckyNumber" from its implementation.
 	GetLuckyNumber() int
+	GetInnerLuckyFieldsUser() (*InnerLuckyFieldsUser, bool)
 }
 
 func (v *InnerLuckyFieldsUser) implementsGraphQLInterfaceInnerLuckyFields() {}
+func (v *InnerLuckyFieldsUser) GetInnerLuckyFieldsUser() (*InnerLuckyFieldsUser, bool) {
+	return v, true
+}
 
 func __unmarshalInnerLuckyFields(b []byte, v *InnerLuckyFields) error {
 	if string(b) == "null" {
@@ -459,9 +491,13 @@ type LuckyFields interface {
 	implementsGraphQLInterfaceLuckyFields()
 	// GetLuckyNumber returns the interface-field "luckyNumber" from its implementation.
 	GetLuckyNumber() int
+	GetLuckyFieldsUser() (*LuckyFieldsUser, bool)
 }
 
 func (v *LuckyFieldsUser) implementsGraphQLInterfaceLuckyFields() {}
+func (v *LuckyFieldsUser) GetLuckyFieldsUser() (*LuckyFieldsUser, bool) {
+	return v, true
+}
 
 func __unmarshalLuckyFields(b []byte, v *LuckyFields) error {
 	if string(b) == "null" {
@@ -784,10 +820,24 @@ type QueryFragmentBeingsBeing interface {
 	GetTypename() string
 	// GetId returns the interface-field "id" from its implementation.
 	GetId() string
+	GetBeingUser() (*QueryFragmentBeingsUser, bool)
+	GetBeingAnimal() (*QueryFragmentBeingsAnimal, bool)
 }
 
-func (v *QueryFragmentBeingsUser) implementsGraphQLInterfaceQueryFragmentBeingsBeing()   {}
+func (v *QueryFragmentBeingsUser) implementsGraphQLInterfaceQueryFragmentBeingsBeing() {}
+func (v *QueryFragmentBeingsUser) GetBeingUser() (*QueryFragmentBeingsUser, bool) {
+	return v, true
+}
+func (v *QueryFragmentBeingsUser) GetBeingAnimal() (*QueryFragmentBeingsAnimal, bool) {
+	return nil, false
+}
 func (v *QueryFragmentBeingsAnimal) implementsGraphQLInterfaceQueryFragmentBeingsBeing() {}
+func (v *QueryFragmentBeingsAnimal) GetBeingUser() (*QueryFragmentBeingsUser, bool) {
+	return nil, false
+}
+func (v *QueryFragmentBeingsAnimal) GetBeingAnimal() (*QueryFragmentBeingsAnimal, bool) {
+	return v, true
+}
 
 func __unmarshalQueryFragmentBeingsBeing(b []byte, v *QueryFragmentBeingsBeing) error {
 	if string(b) == "null" {
@@ -1779,11 +1829,25 @@ type queryWithFragmentsBeingsAnimalOwnerBeing interface {
 	GetId() string
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetBeingUser() (*queryWithFragmentsBeingsAnimalOwnerUser, bool)
+	GetBeingAnimal() (*queryWithFragmentsBeingsAnimalOwnerAnimal, bool)
 }
 
 func (v *queryWithFragmentsBeingsAnimalOwnerUser) implementsGraphQLInterfacequeryWithFragmentsBeingsAnimalOwnerBeing() {
 }
+func (v *queryWithFragmentsBeingsAnimalOwnerUser) GetBeingUser() (*queryWithFragmentsBeingsAnimalOwnerUser, bool) {
+	return v, true
+}
+func (v *queryWithFragmentsBeingsAnimalOwnerUser) GetBeingAnimal() (*queryWithFragmentsBeingsAnimalOwnerAnimal, bool) {
+	return nil, false
+}
 func (v *queryWithFragmentsBeingsAnimalOwnerAnimal) implementsGraphQLInterfacequeryWithFragmentsBeingsAnimalOwnerBeing() {
+}
+func (v *queryWithFragmentsBeingsAnimalOwnerAnimal) GetBeingUser() (*queryWithFragmentsBeingsAnimalOwnerUser, bool) {
+	return nil, false
+}
+func (v *queryWithFragmentsBeingsAnimalOwnerAnimal) GetBeingAnimal() (*queryWithFragmentsBeingsAnimalOwnerAnimal, bool) {
+	return v, true
 }
 
 func __unmarshalqueryWithFragmentsBeingsAnimalOwnerBeing(b []byte, v *queryWithFragmentsBeingsAnimalOwnerBeing) error {
@@ -1876,10 +1940,24 @@ type queryWithFragmentsBeingsBeing interface {
 	GetId() string
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetBeingUser() (*queryWithFragmentsBeingsUser, bool)
+	GetBeingAnimal() (*queryWithFragmentsBeingsAnimal, bool)
 }
 
-func (v *queryWithFragmentsBeingsUser) implementsGraphQLInterfacequeryWithFragmentsBeingsBeing()   {}
+func (v *queryWithFragmentsBeingsUser) implementsGraphQLInterfacequeryWithFragmentsBeingsBeing() {}
+func (v *queryWithFragmentsBeingsUser) GetBeingUser() (*queryWithFragmentsBeingsUser, bool) {
+	return v, true
+}
+func (v *queryWithFragmentsBeingsUser) GetBeingAnimal() (*queryWithFragmentsBeingsAnimal, bool) {
+	return nil, false
+}
 func (v *queryWithFragmentsBeingsAnimal) implementsGraphQLInterfacequeryWithFragmentsBeingsBeing() {}
+func (v *queryWithFragmentsBeingsAnimal) GetBeingUser() (*queryWithFragmentsBeingsUser, bool) {
+	return nil, false
+}
+func (v *queryWithFragmentsBeingsAnimal) GetBeingAnimal() (*queryWithFragmentsBeingsAnimal, bool) {
+	return v, true
+}
 
 func __unmarshalqueryWithFragmentsBeingsBeing(b []byte, v *queryWithFragmentsBeingsBeing) error {
 	if string(b) == "null" {
@@ -2086,11 +2164,25 @@ type queryWithInterfaceListFieldBeingsBeing interface {
 	GetId() string
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetBeingUser() (*queryWithInterfaceListFieldBeingsUser, bool)
+	GetBeingAnimal() (*queryWithInterfaceListFieldBeingsAnimal, bool)
 }
 
 func (v *queryWithInterfaceListFieldBeingsUser) implementsGraphQLInterfacequeryWithInterfaceListFieldBeingsBeing() {
 }
+func (v *queryWithInterfaceListFieldBeingsUser) GetBeingUser() (*queryWithInterfaceListFieldBeingsUser, bool) {
+	return v, true
+}
+func (v *queryWithInterfaceListFieldBeingsUser) GetBeingAnimal() (*queryWithInterfaceListFieldBeingsAnimal, bool) {
+	return nil, false
+}
 func (v *queryWithInterfaceListFieldBeingsAnimal) implementsGraphQLInterfacequeryWithInterfaceListFieldBeingsBeing() {
+}
+func (v *queryWithInterfaceListFieldBeingsAnimal) GetBeingUser() (*queryWithInterfaceListFieldBeingsUser, bool) {
+	return nil, false
+}
+func (v *queryWithInterfaceListFieldBeingsAnimal) GetBeingAnimal() (*queryWithInterfaceListFieldBeingsAnimal, bool) {
+	return v, true
 }
 
 func __unmarshalqueryWithInterfaceListFieldBeingsBeing(b []byte, v *queryWithInterfaceListFieldBeingsBeing) error {
@@ -2280,11 +2372,25 @@ type queryWithInterfaceListPointerFieldBeingsBeing interface {
 	GetId() string
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetBeingUser() (*queryWithInterfaceListPointerFieldBeingsUser, bool)
+	GetBeingAnimal() (*queryWithInterfaceListPointerFieldBeingsAnimal, bool)
 }
 
 func (v *queryWithInterfaceListPointerFieldBeingsUser) implementsGraphQLInterfacequeryWithInterfaceListPointerFieldBeingsBeing() {
 }
+func (v *queryWithInterfaceListPointerFieldBeingsUser) GetBeingUser() (*queryWithInterfaceListPointerFieldBeingsUser, bool) {
+	return v, true
+}
+func (v *queryWithInterfaceListPointerFieldBeingsUser) GetBeingAnimal() (*queryWithInterfaceListPointerFieldBeingsAnimal, bool) {
+	return nil, false
+}
 func (v *queryWithInterfaceListPointerFieldBeingsAnimal) implementsGraphQLInterfacequeryWithInterfaceListPointerFieldBeingsBeing() {
+}
+func (v *queryWithInterfaceListPointerFieldBeingsAnimal) GetBeingUser() (*queryWithInterfaceListPointerFieldBeingsUser, bool) {
+	return nil, false
+}
+func (v *queryWithInterfaceListPointerFieldBeingsAnimal) GetBeingAnimal() (*queryWithInterfaceListPointerFieldBeingsAnimal, bool) {
+	return v, true
 }
 
 func __unmarshalqueryWithInterfaceListPointerFieldBeingsBeing(b []byte, v *queryWithInterfaceListPointerFieldBeingsBeing) error {
@@ -2461,11 +2567,25 @@ type queryWithInterfaceNoFragmentsBeing interface {
 	GetId() string
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetBeingUser() (*queryWithInterfaceNoFragmentsBeingUser, bool)
+	GetBeingAnimal() (*queryWithInterfaceNoFragmentsBeingAnimal, bool)
 }
 
 func (v *queryWithInterfaceNoFragmentsBeingUser) implementsGraphQLInterfacequeryWithInterfaceNoFragmentsBeing() {
 }
+func (v *queryWithInterfaceNoFragmentsBeingUser) GetBeingUser() (*queryWithInterfaceNoFragmentsBeingUser, bool) {
+	return v, true
+}
+func (v *queryWithInterfaceNoFragmentsBeingUser) GetBeingAnimal() (*queryWithInterfaceNoFragmentsBeingAnimal, bool) {
+	return nil, false
+}
 func (v *queryWithInterfaceNoFragmentsBeingAnimal) implementsGraphQLInterfacequeryWithInterfaceNoFragmentsBeing() {
+}
+func (v *queryWithInterfaceNoFragmentsBeingAnimal) GetBeingUser() (*queryWithInterfaceNoFragmentsBeingUser, bool) {
+	return nil, false
+}
+func (v *queryWithInterfaceNoFragmentsBeingAnimal) GetBeingAnimal() (*queryWithInterfaceNoFragmentsBeingAnimal, bool) {
+	return v, true
 }
 
 func __unmarshalqueryWithInterfaceNoFragmentsBeing(b []byte, v *queryWithInterfaceNoFragmentsBeing) error {
@@ -2749,11 +2869,25 @@ type queryWithNamedFragmentsBeingsBeing interface {
 	GetTypename() string
 	// GetId returns the interface-field "id" from its implementation.
 	GetId() string
+	GetBeingUser() (*queryWithNamedFragmentsBeingsUser, bool)
+	GetBeingAnimal() (*queryWithNamedFragmentsBeingsAnimal, bool)
 }
 
 func (v *queryWithNamedFragmentsBeingsUser) implementsGraphQLInterfacequeryWithNamedFragmentsBeingsBeing() {
 }
+func (v *queryWithNamedFragmentsBeingsUser) GetBeingUser() (*queryWithNamedFragmentsBeingsUser, bool) {
+	return v, true
+}
+func (v *queryWithNamedFragmentsBeingsUser) GetBeingAnimal() (*queryWithNamedFragmentsBeingsAnimal, bool) {
+	return nil, false
+}
 func (v *queryWithNamedFragmentsBeingsAnimal) implementsGraphQLInterfacequeryWithNamedFragmentsBeingsBeing() {
+}
+func (v *queryWithNamedFragmentsBeingsAnimal) GetBeingUser() (*queryWithNamedFragmentsBeingsUser, bool) {
+	return nil, false
+}
+func (v *queryWithNamedFragmentsBeingsAnimal) GetBeingAnimal() (*queryWithNamedFragmentsBeingsAnimal, bool) {
+	return v, true
 }
 
 func __unmarshalqueryWithNamedFragmentsBeingsBeing(b []byte, v *queryWithNamedFragmentsBeingsBeing) error {

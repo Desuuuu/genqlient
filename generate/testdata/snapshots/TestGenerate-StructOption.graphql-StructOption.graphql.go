@@ -234,13 +234,43 @@ type StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenContent int
 	//
 	// ID is the identifier of the content.
 	GetId() testutil.ID
+	GetContentArticle() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenArticle, bool)
+	GetContentVideo() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenVideo, bool)
+	GetContentTopic() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenTopic, bool)
 }
 
 func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenArticle) implementsGraphQLInterfaceStructOptionRootTopicChildrenContentParentTopicInterfaceChildrenContent() {
 }
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenArticle) GetContentArticle() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenArticle, bool) {
+	return v, true
+}
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenArticle) GetContentVideo() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenVideo, bool) {
+	return nil, false
+}
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenArticle) GetContentTopic() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenTopic, bool) {
+	return nil, false
+}
 func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenVideo) implementsGraphQLInterfaceStructOptionRootTopicChildrenContentParentTopicInterfaceChildrenContent() {
 }
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenVideo) GetContentArticle() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenArticle, bool) {
+	return nil, false
+}
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenVideo) GetContentVideo() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenVideo, bool) {
+	return v, true
+}
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenVideo) GetContentTopic() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenTopic, bool) {
+	return nil, false
+}
 func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenTopic) implementsGraphQLInterfaceStructOptionRootTopicChildrenContentParentTopicInterfaceChildrenContent() {
+}
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenTopic) GetContentArticle() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenArticle, bool) {
+	return nil, false
+}
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenTopic) GetContentVideo() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenVideo, bool) {
+	return nil, false
+}
+func (v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenTopic) GetContentTopic() (*StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenTopic, bool) {
+	return v, true
 }
 
 func __unmarshalStructOptionRootTopicChildrenContentParentTopicInterfaceChildrenContent(b []byte, v *StructOptionRootTopicChildrenContentParentTopicInterfaceChildrenContent) error {

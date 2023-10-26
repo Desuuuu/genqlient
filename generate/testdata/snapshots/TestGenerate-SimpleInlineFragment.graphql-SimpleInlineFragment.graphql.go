@@ -51,13 +51,43 @@ type SimpleInlineFragmentRandomItemContent interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*SimpleInlineFragmentRandomItemArticle, bool)
+	GetContentVideo() (*SimpleInlineFragmentRandomItemVideo, bool)
+	GetContentTopic() (*SimpleInlineFragmentRandomItemTopic, bool)
 }
 
 func (v *SimpleInlineFragmentRandomItemArticle) implementsGraphQLInterfaceSimpleInlineFragmentRandomItemContent() {
 }
+func (v *SimpleInlineFragmentRandomItemArticle) GetContentArticle() (*SimpleInlineFragmentRandomItemArticle, bool) {
+	return v, true
+}
+func (v *SimpleInlineFragmentRandomItemArticle) GetContentVideo() (*SimpleInlineFragmentRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *SimpleInlineFragmentRandomItemArticle) GetContentTopic() (*SimpleInlineFragmentRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *SimpleInlineFragmentRandomItemVideo) implementsGraphQLInterfaceSimpleInlineFragmentRandomItemContent() {
 }
+func (v *SimpleInlineFragmentRandomItemVideo) GetContentArticle() (*SimpleInlineFragmentRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *SimpleInlineFragmentRandomItemVideo) GetContentVideo() (*SimpleInlineFragmentRandomItemVideo, bool) {
+	return v, true
+}
+func (v *SimpleInlineFragmentRandomItemVideo) GetContentTopic() (*SimpleInlineFragmentRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *SimpleInlineFragmentRandomItemTopic) implementsGraphQLInterfaceSimpleInlineFragmentRandomItemContent() {
+}
+func (v *SimpleInlineFragmentRandomItemTopic) GetContentArticle() (*SimpleInlineFragmentRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *SimpleInlineFragmentRandomItemTopic) GetContentVideo() (*SimpleInlineFragmentRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *SimpleInlineFragmentRandomItemTopic) GetContentTopic() (*SimpleInlineFragmentRandomItemTopic, bool) {
+	return v, true
 }
 
 func __unmarshalSimpleInlineFragmentRandomItemContent(b []byte, v *SimpleInlineFragmentRandomItemContent) error {

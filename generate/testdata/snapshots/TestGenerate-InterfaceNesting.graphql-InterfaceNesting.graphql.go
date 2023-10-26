@@ -150,13 +150,43 @@ type InterfaceNestingRootTopicChildrenContent interface {
 	GetId() testutil.ID
 	// GetParent returns the interface-field "parent" from its implementation.
 	GetParent() InterfaceNestingRootTopicChildrenContentParentTopic
+	GetContentArticle() (*InterfaceNestingRootTopicChildrenArticle, bool)
+	GetContentVideo() (*InterfaceNestingRootTopicChildrenVideo, bool)
+	GetContentTopic() (*InterfaceNestingRootTopicChildrenTopic, bool)
 }
 
 func (v *InterfaceNestingRootTopicChildrenArticle) implementsGraphQLInterfaceInterfaceNestingRootTopicChildrenContent() {
 }
+func (v *InterfaceNestingRootTopicChildrenArticle) GetContentArticle() (*InterfaceNestingRootTopicChildrenArticle, bool) {
+	return v, true
+}
+func (v *InterfaceNestingRootTopicChildrenArticle) GetContentVideo() (*InterfaceNestingRootTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNestingRootTopicChildrenArticle) GetContentTopic() (*InterfaceNestingRootTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNestingRootTopicChildrenVideo) implementsGraphQLInterfaceInterfaceNestingRootTopicChildrenContent() {
 }
+func (v *InterfaceNestingRootTopicChildrenVideo) GetContentArticle() (*InterfaceNestingRootTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNestingRootTopicChildrenVideo) GetContentVideo() (*InterfaceNestingRootTopicChildrenVideo, bool) {
+	return v, true
+}
+func (v *InterfaceNestingRootTopicChildrenVideo) GetContentTopic() (*InterfaceNestingRootTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNestingRootTopicChildrenTopic) implementsGraphQLInterfaceInterfaceNestingRootTopicChildrenContent() {
+}
+func (v *InterfaceNestingRootTopicChildrenTopic) GetContentArticle() (*InterfaceNestingRootTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNestingRootTopicChildrenTopic) GetContentVideo() (*InterfaceNestingRootTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNestingRootTopicChildrenTopic) GetContentTopic() (*InterfaceNestingRootTopicChildrenTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceNestingRootTopicChildrenContent(b []byte, v *InterfaceNestingRootTopicChildrenContent) error {
@@ -355,13 +385,43 @@ type InterfaceNestingRootTopicChildrenContentParentTopicChildrenContent interfac
 	//
 	// ID is the identifier of the content.
 	GetId() testutil.ID
+	GetContentArticle() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenArticle, bool)
+	GetContentVideo() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenVideo, bool)
+	GetContentTopic() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenTopic, bool)
 }
 
 func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenArticle) implementsGraphQLInterfaceInterfaceNestingRootTopicChildrenContentParentTopicChildrenContent() {
 }
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenArticle) GetContentArticle() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenArticle, bool) {
+	return v, true
+}
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenArticle) GetContentVideo() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenArticle) GetContentTopic() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenVideo) implementsGraphQLInterfaceInterfaceNestingRootTopicChildrenContentParentTopicChildrenContent() {
 }
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenVideo) GetContentArticle() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenVideo) GetContentVideo() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenVideo, bool) {
+	return v, true
+}
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenVideo) GetContentTopic() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenTopic) implementsGraphQLInterfaceInterfaceNestingRootTopicChildrenContentParentTopicChildrenContent() {
+}
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenTopic) GetContentArticle() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenTopic) GetContentVideo() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenTopic) GetContentTopic() (*InterfaceNestingRootTopicChildrenContentParentTopicChildrenTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceNestingRootTopicChildrenContentParentTopicChildrenContent(b []byte, v *InterfaceNestingRootTopicChildrenContentParentTopicChildrenContent) error {

@@ -496,12 +496,40 @@ func (typ *goInterfaceType) WriteDefinition(w io.Writer, g *generator) error {
 		writeDescription(w, description)
 		fmt.Fprintf(w, "\t%s() %s\n", methodName, sharedField.GoType.Reference())
 	}
+
+	var name string
+
+	if typ.FragmentName != "" {
+		name = typ.FragmentName
+	} else {
+		name = typ.GraphQLName
+	}
+
+	for _, impl := range typ.Implementations {
+		fmt.Fprintf(w, "\tGet%s%s() (*%s, bool)\n", name, impl.GraphQLName,
+			impl.Reference())
+	}
+
 	fmt.Fprintf(w, "}\n")
 
 	// Now, write out the implementations.
 	for _, impl := range typ.Implementations {
 		fmt.Fprintf(w, "func (v *%s) %s() {}\n",
 			impl.Reference(), implementsMethodName)
+
+		for _, targetImpl := range typ.Implementations {
+			var code string
+
+			if impl.GoName == targetImpl.GoName {
+				code = "return v, true"
+			} else {
+				code = "return nil, false"
+			}
+
+			fmt.Fprintf(w, "func (v *%s) Get%s%s() (*%s, bool) {\n\t%s\n}\n",
+				impl.Reference(), name, targetImpl.GraphQLName,
+				targetImpl.Reference(), code)
+		}
 	}
 
 	// Finally, write the marshal- and unmarshal-helpers, which

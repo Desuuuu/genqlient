@@ -47,13 +47,43 @@ type SimpleNamedFragmentRandomItemContent interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*SimpleNamedFragmentRandomItemArticle, bool)
+	GetContentVideo() (*SimpleNamedFragmentRandomItemVideo, bool)
+	GetContentTopic() (*SimpleNamedFragmentRandomItemTopic, bool)
 }
 
 func (v *SimpleNamedFragmentRandomItemArticle) implementsGraphQLInterfaceSimpleNamedFragmentRandomItemContent() {
 }
+func (v *SimpleNamedFragmentRandomItemArticle) GetContentArticle() (*SimpleNamedFragmentRandomItemArticle, bool) {
+	return v, true
+}
+func (v *SimpleNamedFragmentRandomItemArticle) GetContentVideo() (*SimpleNamedFragmentRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *SimpleNamedFragmentRandomItemArticle) GetContentTopic() (*SimpleNamedFragmentRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *SimpleNamedFragmentRandomItemVideo) implementsGraphQLInterfaceSimpleNamedFragmentRandomItemContent() {
 }
+func (v *SimpleNamedFragmentRandomItemVideo) GetContentArticle() (*SimpleNamedFragmentRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *SimpleNamedFragmentRandomItemVideo) GetContentVideo() (*SimpleNamedFragmentRandomItemVideo, bool) {
+	return v, true
+}
+func (v *SimpleNamedFragmentRandomItemVideo) GetContentTopic() (*SimpleNamedFragmentRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *SimpleNamedFragmentRandomItemTopic) implementsGraphQLInterfaceSimpleNamedFragmentRandomItemContent() {
+}
+func (v *SimpleNamedFragmentRandomItemTopic) GetContentArticle() (*SimpleNamedFragmentRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *SimpleNamedFragmentRandomItemTopic) GetContentVideo() (*SimpleNamedFragmentRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *SimpleNamedFragmentRandomItemTopic) GetContentTopic() (*SimpleNamedFragmentRandomItemTopic, bool) {
+	return v, true
 }
 
 func __unmarshalSimpleNamedFragmentRandomItemContent(b []byte, v *SimpleNamedFragmentRandomItemContent) error {
@@ -253,11 +283,25 @@ type SimpleNamedFragmentRandomLeafLeafContent interface {
 	implementsGraphQLInterfaceSimpleNamedFragmentRandomLeafLeafContent()
 	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
 	GetTypename() string
+	GetLeafContentArticle() (*SimpleNamedFragmentRandomLeafArticle, bool)
+	GetLeafContentVideo() (*SimpleNamedFragmentRandomLeafVideo, bool)
 }
 
 func (v *SimpleNamedFragmentRandomLeafArticle) implementsGraphQLInterfaceSimpleNamedFragmentRandomLeafLeafContent() {
 }
+func (v *SimpleNamedFragmentRandomLeafArticle) GetLeafContentArticle() (*SimpleNamedFragmentRandomLeafArticle, bool) {
+	return v, true
+}
+func (v *SimpleNamedFragmentRandomLeafArticle) GetLeafContentVideo() (*SimpleNamedFragmentRandomLeafVideo, bool) {
+	return nil, false
+}
 func (v *SimpleNamedFragmentRandomLeafVideo) implementsGraphQLInterfaceSimpleNamedFragmentRandomLeafLeafContent() {
+}
+func (v *SimpleNamedFragmentRandomLeafVideo) GetLeafContentArticle() (*SimpleNamedFragmentRandomLeafArticle, bool) {
+	return nil, false
+}
+func (v *SimpleNamedFragmentRandomLeafVideo) GetLeafContentVideo() (*SimpleNamedFragmentRandomLeafVideo, bool) {
+	return v, true
 }
 
 func __unmarshalSimpleNamedFragmentRandomLeafLeafContent(b []byte, v *SimpleNamedFragmentRandomLeafLeafContent) error {

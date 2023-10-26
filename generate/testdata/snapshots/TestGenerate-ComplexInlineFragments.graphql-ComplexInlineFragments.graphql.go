@@ -53,13 +53,43 @@ type ComplexInlineFragmentsConflictingStuffContent interface {
 	implementsGraphQLInterfaceComplexInlineFragmentsConflictingStuffContent()
 	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
 	GetTypename() string
+	GetContentArticle() (*ComplexInlineFragmentsConflictingStuffArticle, bool)
+	GetContentVideo() (*ComplexInlineFragmentsConflictingStuffVideo, bool)
+	GetContentTopic() (*ComplexInlineFragmentsConflictingStuffTopic, bool)
 }
 
 func (v *ComplexInlineFragmentsConflictingStuffArticle) implementsGraphQLInterfaceComplexInlineFragmentsConflictingStuffContent() {
 }
+func (v *ComplexInlineFragmentsConflictingStuffArticle) GetContentArticle() (*ComplexInlineFragmentsConflictingStuffArticle, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsConflictingStuffArticle) GetContentVideo() (*ComplexInlineFragmentsConflictingStuffVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsConflictingStuffArticle) GetContentTopic() (*ComplexInlineFragmentsConflictingStuffTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsConflictingStuffVideo) implementsGraphQLInterfaceComplexInlineFragmentsConflictingStuffContent() {
 }
+func (v *ComplexInlineFragmentsConflictingStuffVideo) GetContentArticle() (*ComplexInlineFragmentsConflictingStuffArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsConflictingStuffVideo) GetContentVideo() (*ComplexInlineFragmentsConflictingStuffVideo, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsConflictingStuffVideo) GetContentTopic() (*ComplexInlineFragmentsConflictingStuffTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsConflictingStuffTopic) implementsGraphQLInterfaceComplexInlineFragmentsConflictingStuffContent() {
+}
+func (v *ComplexInlineFragmentsConflictingStuffTopic) GetContentArticle() (*ComplexInlineFragmentsConflictingStuffArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsConflictingStuffTopic) GetContentVideo() (*ComplexInlineFragmentsConflictingStuffVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsConflictingStuffTopic) GetContentTopic() (*ComplexInlineFragmentsConflictingStuffTopic, bool) {
+	return v, true
 }
 
 func __unmarshalComplexInlineFragmentsConflictingStuffContent(b []byte, v *ComplexInlineFragmentsConflictingStuffContent) error {
@@ -187,13 +217,43 @@ type ComplexInlineFragmentsNestedStuffContent interface {
 	implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffContent()
 	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
 	GetTypename() string
+	GetContentArticle() (*ComplexInlineFragmentsNestedStuffArticle, bool)
+	GetContentVideo() (*ComplexInlineFragmentsNestedStuffVideo, bool)
+	GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopic, bool)
 }
 
 func (v *ComplexInlineFragmentsNestedStuffArticle) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffContent() {
 }
+func (v *ComplexInlineFragmentsNestedStuffArticle) GetContentArticle() (*ComplexInlineFragmentsNestedStuffArticle, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsNestedStuffArticle) GetContentVideo() (*ComplexInlineFragmentsNestedStuffVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffArticle) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsNestedStuffVideo) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffContent() {
 }
+func (v *ComplexInlineFragmentsNestedStuffVideo) GetContentArticle() (*ComplexInlineFragmentsNestedStuffArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffVideo) GetContentVideo() (*ComplexInlineFragmentsNestedStuffVideo, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsNestedStuffVideo) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsNestedStuffTopic) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffContent() {
+}
+func (v *ComplexInlineFragmentsNestedStuffTopic) GetContentArticle() (*ComplexInlineFragmentsNestedStuffArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopic) GetContentVideo() (*ComplexInlineFragmentsNestedStuffVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopic) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopic, bool) {
+	return v, true
 }
 
 func __unmarshalComplexInlineFragmentsNestedStuffContent(b []byte, v *ComplexInlineFragmentsNestedStuffContent) error {
@@ -513,13 +573,43 @@ type ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTop
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenArticle, bool)
+	GetContentVideo() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenVideo, bool)
+	GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenTopic, bool)
 }
 
 func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenArticle) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenContent() {
 }
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenArticle) GetContentArticle() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenArticle, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenArticle) GetContentVideo() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenArticle) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenVideo) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenContent() {
 }
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenVideo) GetContentArticle() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenVideo) GetContentVideo() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenVideo, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenVideo) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenTopic) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenContent() {
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenTopic) GetContentArticle() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenTopic) GetContentVideo() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenTopic) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenTopic, bool) {
+	return v, true
 }
 
 func __unmarshalComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenContent(b []byte, v *ComplexInlineFragmentsNestedStuffTopicChildrenArticleParentContentParentTopicChildrenContent) error {
@@ -670,13 +760,43 @@ type ComplexInlineFragmentsNestedStuffTopicChildrenContent interface {
 	//
 	// ID is the identifier of the content.
 	GetId() testutil.ID
+	GetContentArticle() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticle, bool)
+	GetContentVideo() (*ComplexInlineFragmentsNestedStuffTopicChildrenVideo, bool)
+	GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopicChildrenTopic, bool)
 }
 
 func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticle) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffTopicChildrenContent() {
 }
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticle) GetContentArticle() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticle, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticle) GetContentVideo() (*ComplexInlineFragmentsNestedStuffTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenArticle) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsNestedStuffTopicChildrenVideo) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffTopicChildrenContent() {
 }
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenVideo) GetContentArticle() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenVideo) GetContentVideo() (*ComplexInlineFragmentsNestedStuffTopicChildrenVideo, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenVideo) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsNestedStuffTopicChildrenTopic) implementsGraphQLInterfaceComplexInlineFragmentsNestedStuffTopicChildrenContent() {
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenTopic) GetContentArticle() (*ComplexInlineFragmentsNestedStuffTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenTopic) GetContentVideo() (*ComplexInlineFragmentsNestedStuffTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsNestedStuffTopicChildrenTopic) GetContentTopic() (*ComplexInlineFragmentsNestedStuffTopicChildrenTopic, bool) {
+	return v, true
 }
 
 func __unmarshalComplexInlineFragmentsNestedStuffTopicChildrenContent(b []byte, v *ComplexInlineFragmentsNestedStuffTopicChildrenContent) error {
@@ -822,13 +942,43 @@ type ComplexInlineFragmentsRandomItemContent interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*ComplexInlineFragmentsRandomItemArticle, bool)
+	GetContentVideo() (*ComplexInlineFragmentsRandomItemVideo, bool)
+	GetContentTopic() (*ComplexInlineFragmentsRandomItemTopic, bool)
 }
 
 func (v *ComplexInlineFragmentsRandomItemArticle) implementsGraphQLInterfaceComplexInlineFragmentsRandomItemContent() {
 }
+func (v *ComplexInlineFragmentsRandomItemArticle) GetContentArticle() (*ComplexInlineFragmentsRandomItemArticle, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsRandomItemArticle) GetContentVideo() (*ComplexInlineFragmentsRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsRandomItemArticle) GetContentTopic() (*ComplexInlineFragmentsRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsRandomItemVideo) implementsGraphQLInterfaceComplexInlineFragmentsRandomItemContent() {
 }
+func (v *ComplexInlineFragmentsRandomItemVideo) GetContentArticle() (*ComplexInlineFragmentsRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsRandomItemVideo) GetContentVideo() (*ComplexInlineFragmentsRandomItemVideo, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsRandomItemVideo) GetContentTopic() (*ComplexInlineFragmentsRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsRandomItemTopic) implementsGraphQLInterfaceComplexInlineFragmentsRandomItemContent() {
+}
+func (v *ComplexInlineFragmentsRandomItemTopic) GetContentArticle() (*ComplexInlineFragmentsRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsRandomItemTopic) GetContentVideo() (*ComplexInlineFragmentsRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsRandomItemTopic) GetContentTopic() (*ComplexInlineFragmentsRandomItemTopic, bool) {
+	return v, true
 }
 
 func __unmarshalComplexInlineFragmentsRandomItemContent(b []byte, v *ComplexInlineFragmentsRandomItemContent) error {
@@ -1000,13 +1150,43 @@ type ComplexInlineFragmentsRepeatedStuffContent interface {
 	GetName() string
 	// GetOtherName returns the interface-field "name" from its implementation.
 	GetOtherName() string
+	GetContentArticle() (*ComplexInlineFragmentsRepeatedStuffArticle, bool)
+	GetContentVideo() (*ComplexInlineFragmentsRepeatedStuffVideo, bool)
+	GetContentTopic() (*ComplexInlineFragmentsRepeatedStuffTopic, bool)
 }
 
 func (v *ComplexInlineFragmentsRepeatedStuffArticle) implementsGraphQLInterfaceComplexInlineFragmentsRepeatedStuffContent() {
 }
+func (v *ComplexInlineFragmentsRepeatedStuffArticle) GetContentArticle() (*ComplexInlineFragmentsRepeatedStuffArticle, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsRepeatedStuffArticle) GetContentVideo() (*ComplexInlineFragmentsRepeatedStuffVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsRepeatedStuffArticle) GetContentTopic() (*ComplexInlineFragmentsRepeatedStuffTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsRepeatedStuffVideo) implementsGraphQLInterfaceComplexInlineFragmentsRepeatedStuffContent() {
 }
+func (v *ComplexInlineFragmentsRepeatedStuffVideo) GetContentArticle() (*ComplexInlineFragmentsRepeatedStuffArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsRepeatedStuffVideo) GetContentVideo() (*ComplexInlineFragmentsRepeatedStuffVideo, bool) {
+	return v, true
+}
+func (v *ComplexInlineFragmentsRepeatedStuffVideo) GetContentTopic() (*ComplexInlineFragmentsRepeatedStuffTopic, bool) {
+	return nil, false
+}
 func (v *ComplexInlineFragmentsRepeatedStuffTopic) implementsGraphQLInterfaceComplexInlineFragmentsRepeatedStuffContent() {
+}
+func (v *ComplexInlineFragmentsRepeatedStuffTopic) GetContentArticle() (*ComplexInlineFragmentsRepeatedStuffArticle, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsRepeatedStuffTopic) GetContentVideo() (*ComplexInlineFragmentsRepeatedStuffVideo, bool) {
+	return nil, false
+}
+func (v *ComplexInlineFragmentsRepeatedStuffTopic) GetContentTopic() (*ComplexInlineFragmentsRepeatedStuffTopic, bool) {
+	return v, true
 }
 
 func __unmarshalComplexInlineFragmentsRepeatedStuffContent(b []byte, v *ComplexInlineFragmentsRepeatedStuffContent) error {

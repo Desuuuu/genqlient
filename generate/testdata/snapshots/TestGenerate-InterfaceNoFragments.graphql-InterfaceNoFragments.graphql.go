@@ -47,13 +47,43 @@ type InterfaceNoFragmentsQueryRandomItemContent interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*InterfaceNoFragmentsQueryRandomItemArticle, bool)
+	GetContentVideo() (*InterfaceNoFragmentsQueryRandomItemVideo, bool)
+	GetContentTopic() (*InterfaceNoFragmentsQueryRandomItemTopic, bool)
 }
 
 func (v *InterfaceNoFragmentsQueryRandomItemArticle) implementsGraphQLInterfaceInterfaceNoFragmentsQueryRandomItemContent() {
 }
+func (v *InterfaceNoFragmentsQueryRandomItemArticle) GetContentArticle() (*InterfaceNoFragmentsQueryRandomItemArticle, bool) {
+	return v, true
+}
+func (v *InterfaceNoFragmentsQueryRandomItemArticle) GetContentVideo() (*InterfaceNoFragmentsQueryRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryRandomItemArticle) GetContentTopic() (*InterfaceNoFragmentsQueryRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNoFragmentsQueryRandomItemVideo) implementsGraphQLInterfaceInterfaceNoFragmentsQueryRandomItemContent() {
 }
+func (v *InterfaceNoFragmentsQueryRandomItemVideo) GetContentArticle() (*InterfaceNoFragmentsQueryRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryRandomItemVideo) GetContentVideo() (*InterfaceNoFragmentsQueryRandomItemVideo, bool) {
+	return v, true
+}
+func (v *InterfaceNoFragmentsQueryRandomItemVideo) GetContentTopic() (*InterfaceNoFragmentsQueryRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNoFragmentsQueryRandomItemTopic) implementsGraphQLInterfaceInterfaceNoFragmentsQueryRandomItemContent() {
+}
+func (v *InterfaceNoFragmentsQueryRandomItemTopic) GetContentArticle() (*InterfaceNoFragmentsQueryRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryRandomItemTopic) GetContentVideo() (*InterfaceNoFragmentsQueryRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryRandomItemTopic) GetContentTopic() (*InterfaceNoFragmentsQueryRandomItemTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceNoFragmentsQueryRandomItemContent(b []byte, v *InterfaceNoFragmentsQueryRandomItemContent) error {
@@ -197,13 +227,43 @@ type InterfaceNoFragmentsQueryRandomItemWithTypeNameContent interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameArticle, bool)
+	GetContentVideo() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameVideo, bool)
+	GetContentTopic() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameTopic, bool)
 }
 
 func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameArticle) implementsGraphQLInterfaceInterfaceNoFragmentsQueryRandomItemWithTypeNameContent() {
 }
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameArticle) GetContentArticle() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameArticle, bool) {
+	return v, true
+}
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameArticle) GetContentVideo() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameArticle) GetContentTopic() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameVideo) implementsGraphQLInterfaceInterfaceNoFragmentsQueryRandomItemWithTypeNameContent() {
 }
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameVideo) GetContentArticle() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameVideo) GetContentVideo() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameVideo, bool) {
+	return v, true
+}
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameVideo) GetContentTopic() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameTopic) implementsGraphQLInterfaceInterfaceNoFragmentsQueryRandomItemWithTypeNameContent() {
+}
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameTopic) GetContentArticle() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameTopic) GetContentVideo() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryRandomItemWithTypeNameTopic) GetContentTopic() (*InterfaceNoFragmentsQueryRandomItemWithTypeNameTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceNoFragmentsQueryRandomItemWithTypeNameContent(b []byte, v *InterfaceNoFragmentsQueryRandomItemWithTypeNameContent) error {
@@ -515,13 +575,43 @@ type InterfaceNoFragmentsQueryWithPointerContent interface {
 	GetId() *testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() *string
+	GetContentArticle() (*InterfaceNoFragmentsQueryWithPointerArticle, bool)
+	GetContentVideo() (*InterfaceNoFragmentsQueryWithPointerVideo, bool)
+	GetContentTopic() (*InterfaceNoFragmentsQueryWithPointerTopic, bool)
 }
 
 func (v *InterfaceNoFragmentsQueryWithPointerArticle) implementsGraphQLInterfaceInterfaceNoFragmentsQueryWithPointerContent() {
 }
+func (v *InterfaceNoFragmentsQueryWithPointerArticle) GetContentArticle() (*InterfaceNoFragmentsQueryWithPointerArticle, bool) {
+	return v, true
+}
+func (v *InterfaceNoFragmentsQueryWithPointerArticle) GetContentVideo() (*InterfaceNoFragmentsQueryWithPointerVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryWithPointerArticle) GetContentTopic() (*InterfaceNoFragmentsQueryWithPointerTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNoFragmentsQueryWithPointerVideo) implementsGraphQLInterfaceInterfaceNoFragmentsQueryWithPointerContent() {
 }
+func (v *InterfaceNoFragmentsQueryWithPointerVideo) GetContentArticle() (*InterfaceNoFragmentsQueryWithPointerArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryWithPointerVideo) GetContentVideo() (*InterfaceNoFragmentsQueryWithPointerVideo, bool) {
+	return v, true
+}
+func (v *InterfaceNoFragmentsQueryWithPointerVideo) GetContentTopic() (*InterfaceNoFragmentsQueryWithPointerTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceNoFragmentsQueryWithPointerTopic) implementsGraphQLInterfaceInterfaceNoFragmentsQueryWithPointerContent() {
+}
+func (v *InterfaceNoFragmentsQueryWithPointerTopic) GetContentArticle() (*InterfaceNoFragmentsQueryWithPointerArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryWithPointerTopic) GetContentVideo() (*InterfaceNoFragmentsQueryWithPointerVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceNoFragmentsQueryWithPointerTopic) GetContentTopic() (*InterfaceNoFragmentsQueryWithPointerTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceNoFragmentsQueryWithPointerContent(b []byte, v *InterfaceNoFragmentsQueryWithPointerContent) error {

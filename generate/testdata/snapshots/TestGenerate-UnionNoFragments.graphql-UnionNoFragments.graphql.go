@@ -29,11 +29,25 @@ type UnionNoFragmentsQueryRandomLeafLeafContent interface {
 	implementsGraphQLInterfaceUnionNoFragmentsQueryRandomLeafLeafContent()
 	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
 	GetTypename() string
+	GetLeafContentArticle() (*UnionNoFragmentsQueryRandomLeafArticle, bool)
+	GetLeafContentVideo() (*UnionNoFragmentsQueryRandomLeafVideo, bool)
 }
 
 func (v *UnionNoFragmentsQueryRandomLeafArticle) implementsGraphQLInterfaceUnionNoFragmentsQueryRandomLeafLeafContent() {
 }
+func (v *UnionNoFragmentsQueryRandomLeafArticle) GetLeafContentArticle() (*UnionNoFragmentsQueryRandomLeafArticle, bool) {
+	return v, true
+}
+func (v *UnionNoFragmentsQueryRandomLeafArticle) GetLeafContentVideo() (*UnionNoFragmentsQueryRandomLeafVideo, bool) {
+	return nil, false
+}
 func (v *UnionNoFragmentsQueryRandomLeafVideo) implementsGraphQLInterfaceUnionNoFragmentsQueryRandomLeafLeafContent() {
+}
+func (v *UnionNoFragmentsQueryRandomLeafVideo) GetLeafContentArticle() (*UnionNoFragmentsQueryRandomLeafArticle, bool) {
+	return nil, false
+}
+func (v *UnionNoFragmentsQueryRandomLeafVideo) GetLeafContentVideo() (*UnionNoFragmentsQueryRandomLeafVideo, bool) {
+	return v, true
 }
 
 func __unmarshalUnionNoFragmentsQueryRandomLeafLeafContent(b []byte, v *UnionNoFragmentsQueryRandomLeafLeafContent) error {

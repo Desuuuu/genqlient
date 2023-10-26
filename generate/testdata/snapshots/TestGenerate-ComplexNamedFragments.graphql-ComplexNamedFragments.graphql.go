@@ -128,11 +128,41 @@ type ContentFields interface {
 	GetName() string
 	// GetUrl returns the interface-field "url" from its implementation.
 	GetUrl() string
+	GetContentFieldsArticle() (*ContentFieldsArticle, bool)
+	GetContentFieldsVideo() (*ContentFieldsVideo, bool)
+	GetContentFieldsTopic() (*ContentFieldsTopic, bool)
 }
 
 func (v *ContentFieldsArticle) implementsGraphQLInterfaceContentFields() {}
-func (v *ContentFieldsVideo) implementsGraphQLInterfaceContentFields()   {}
-func (v *ContentFieldsTopic) implementsGraphQLInterfaceContentFields()   {}
+func (v *ContentFieldsArticle) GetContentFieldsArticle() (*ContentFieldsArticle, bool) {
+	return v, true
+}
+func (v *ContentFieldsArticle) GetContentFieldsVideo() (*ContentFieldsVideo, bool) {
+	return nil, false
+}
+func (v *ContentFieldsArticle) GetContentFieldsTopic() (*ContentFieldsTopic, bool) {
+	return nil, false
+}
+func (v *ContentFieldsVideo) implementsGraphQLInterfaceContentFields() {}
+func (v *ContentFieldsVideo) GetContentFieldsArticle() (*ContentFieldsArticle, bool) {
+	return nil, false
+}
+func (v *ContentFieldsVideo) GetContentFieldsVideo() (*ContentFieldsVideo, bool) {
+	return v, true
+}
+func (v *ContentFieldsVideo) GetContentFieldsTopic() (*ContentFieldsTopic, bool) {
+	return nil, false
+}
+func (v *ContentFieldsTopic) implementsGraphQLInterfaceContentFields() {}
+func (v *ContentFieldsTopic) GetContentFieldsArticle() (*ContentFieldsArticle, bool) {
+	return nil, false
+}
+func (v *ContentFieldsTopic) GetContentFieldsVideo() (*ContentFieldsVideo, bool) {
+	return nil, false
+}
+func (v *ContentFieldsTopic) GetContentFieldsTopic() (*ContentFieldsTopic, bool) {
+	return v, true
+}
 
 func __unmarshalContentFields(b []byte, v *ContentFields) error {
 	if string(b) == "null" {
@@ -466,11 +496,25 @@ type InnerQueryFragmentOtherLeafLeafContent interface {
 	implementsGraphQLInterfaceInnerQueryFragmentOtherLeafLeafContent()
 	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
 	GetTypename() string
+	GetLeafContentArticle() (*InnerQueryFragmentOtherLeafArticle, bool)
+	GetLeafContentVideo() (*InnerQueryFragmentOtherLeafVideo, bool)
 }
 
 func (v *InnerQueryFragmentOtherLeafArticle) implementsGraphQLInterfaceInnerQueryFragmentOtherLeafLeafContent() {
 }
+func (v *InnerQueryFragmentOtherLeafArticle) GetLeafContentArticle() (*InnerQueryFragmentOtherLeafArticle, bool) {
+	return v, true
+}
+func (v *InnerQueryFragmentOtherLeafArticle) GetLeafContentVideo() (*InnerQueryFragmentOtherLeafVideo, bool) {
+	return nil, false
+}
 func (v *InnerQueryFragmentOtherLeafVideo) implementsGraphQLInterfaceInnerQueryFragmentOtherLeafLeafContent() {
+}
+func (v *InnerQueryFragmentOtherLeafVideo) GetLeafContentArticle() (*InnerQueryFragmentOtherLeafArticle, bool) {
+	return nil, false
+}
+func (v *InnerQueryFragmentOtherLeafVideo) GetLeafContentVideo() (*InnerQueryFragmentOtherLeafVideo, bool) {
+	return v, true
 }
 
 func __unmarshalInnerQueryFragmentOtherLeafLeafContent(b []byte, v *InnerQueryFragmentOtherLeafLeafContent) error {
@@ -718,13 +762,43 @@ type InnerQueryFragmentRandomItemContent interface {
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
 	ContentFields
+	GetContentArticle() (*InnerQueryFragmentRandomItemArticle, bool)
+	GetContentVideo() (*InnerQueryFragmentRandomItemVideo, bool)
+	GetContentTopic() (*InnerQueryFragmentRandomItemTopic, bool)
 }
 
 func (v *InnerQueryFragmentRandomItemArticle) implementsGraphQLInterfaceInnerQueryFragmentRandomItemContent() {
 }
+func (v *InnerQueryFragmentRandomItemArticle) GetContentArticle() (*InnerQueryFragmentRandomItemArticle, bool) {
+	return v, true
+}
+func (v *InnerQueryFragmentRandomItemArticle) GetContentVideo() (*InnerQueryFragmentRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *InnerQueryFragmentRandomItemArticle) GetContentTopic() (*InnerQueryFragmentRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *InnerQueryFragmentRandomItemVideo) implementsGraphQLInterfaceInnerQueryFragmentRandomItemContent() {
 }
+func (v *InnerQueryFragmentRandomItemVideo) GetContentArticle() (*InnerQueryFragmentRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *InnerQueryFragmentRandomItemVideo) GetContentVideo() (*InnerQueryFragmentRandomItemVideo, bool) {
+	return v, true
+}
+func (v *InnerQueryFragmentRandomItemVideo) GetContentTopic() (*InnerQueryFragmentRandomItemTopic, bool) {
+	return nil, false
+}
 func (v *InnerQueryFragmentRandomItemTopic) implementsGraphQLInterfaceInnerQueryFragmentRandomItemContent() {
+}
+func (v *InnerQueryFragmentRandomItemTopic) GetContentArticle() (*InnerQueryFragmentRandomItemArticle, bool) {
+	return nil, false
+}
+func (v *InnerQueryFragmentRandomItemTopic) GetContentVideo() (*InnerQueryFragmentRandomItemVideo, bool) {
+	return nil, false
+}
+func (v *InnerQueryFragmentRandomItemTopic) GetContentTopic() (*InnerQueryFragmentRandomItemTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInnerQueryFragmentRandomItemContent(b []byte, v *InnerQueryFragmentRandomItemContent) error {
@@ -1052,11 +1126,25 @@ type InnerQueryFragmentRandomLeafLeafContent interface {
 	implementsGraphQLInterfaceInnerQueryFragmentRandomLeafLeafContent()
 	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
 	GetTypename() string
+	GetLeafContentArticle() (*InnerQueryFragmentRandomLeafArticle, bool)
+	GetLeafContentVideo() (*InnerQueryFragmentRandomLeafVideo, bool)
 }
 
 func (v *InnerQueryFragmentRandomLeafArticle) implementsGraphQLInterfaceInnerQueryFragmentRandomLeafLeafContent() {
 }
+func (v *InnerQueryFragmentRandomLeafArticle) GetLeafContentArticle() (*InnerQueryFragmentRandomLeafArticle, bool) {
+	return v, true
+}
+func (v *InnerQueryFragmentRandomLeafArticle) GetLeafContentVideo() (*InnerQueryFragmentRandomLeafVideo, bool) {
+	return nil, false
+}
 func (v *InnerQueryFragmentRandomLeafVideo) implementsGraphQLInterfaceInnerQueryFragmentRandomLeafLeafContent() {
+}
+func (v *InnerQueryFragmentRandomLeafVideo) GetLeafContentArticle() (*InnerQueryFragmentRandomLeafArticle, bool) {
+	return nil, false
+}
+func (v *InnerQueryFragmentRandomLeafVideo) GetLeafContentVideo() (*InnerQueryFragmentRandomLeafVideo, bool) {
+	return v, true
 }
 
 func __unmarshalInnerQueryFragmentRandomLeafLeafContent(b []byte, v *InnerQueryFragmentRandomLeafLeafContent) error {
@@ -1369,13 +1457,43 @@ type MoreVideoFieldsParentTopicChildrenContent interface {
 	implementsGraphQLInterfaceMoreVideoFieldsParentTopicChildrenContent()
 	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
 	GetTypename() *string
+	GetContentArticle() (*MoreVideoFieldsParentTopicChildrenArticle, bool)
+	GetContentVideo() (*MoreVideoFieldsParentTopicChildrenVideo, bool)
+	GetContentTopic() (*MoreVideoFieldsParentTopicChildrenTopic, bool)
 }
 
 func (v *MoreVideoFieldsParentTopicChildrenArticle) implementsGraphQLInterfaceMoreVideoFieldsParentTopicChildrenContent() {
 }
+func (v *MoreVideoFieldsParentTopicChildrenArticle) GetContentArticle() (*MoreVideoFieldsParentTopicChildrenArticle, bool) {
+	return v, true
+}
+func (v *MoreVideoFieldsParentTopicChildrenArticle) GetContentVideo() (*MoreVideoFieldsParentTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *MoreVideoFieldsParentTopicChildrenArticle) GetContentTopic() (*MoreVideoFieldsParentTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *MoreVideoFieldsParentTopicChildrenVideo) implementsGraphQLInterfaceMoreVideoFieldsParentTopicChildrenContent() {
 }
+func (v *MoreVideoFieldsParentTopicChildrenVideo) GetContentArticle() (*MoreVideoFieldsParentTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *MoreVideoFieldsParentTopicChildrenVideo) GetContentVideo() (*MoreVideoFieldsParentTopicChildrenVideo, bool) {
+	return v, true
+}
+func (v *MoreVideoFieldsParentTopicChildrenVideo) GetContentTopic() (*MoreVideoFieldsParentTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *MoreVideoFieldsParentTopicChildrenTopic) implementsGraphQLInterfaceMoreVideoFieldsParentTopicChildrenContent() {
+}
+func (v *MoreVideoFieldsParentTopicChildrenTopic) GetContentArticle() (*MoreVideoFieldsParentTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *MoreVideoFieldsParentTopicChildrenTopic) GetContentVideo() (*MoreVideoFieldsParentTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *MoreVideoFieldsParentTopicChildrenTopic) GetContentTopic() (*MoreVideoFieldsParentTopicChildrenTopic, bool) {
+	return v, true
 }
 
 func __unmarshalMoreVideoFieldsParentTopicChildrenContent(b []byte, v *MoreVideoFieldsParentTopicChildrenContent) error {

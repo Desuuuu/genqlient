@@ -161,13 +161,43 @@ type InterfaceListFieldRootTopicChildrenContent interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*InterfaceListFieldRootTopicChildrenArticle, bool)
+	GetContentVideo() (*InterfaceListFieldRootTopicChildrenVideo, bool)
+	GetContentTopic() (*InterfaceListFieldRootTopicChildrenTopic, bool)
 }
 
 func (v *InterfaceListFieldRootTopicChildrenArticle) implementsGraphQLInterfaceInterfaceListFieldRootTopicChildrenContent() {
 }
+func (v *InterfaceListFieldRootTopicChildrenArticle) GetContentArticle() (*InterfaceListFieldRootTopicChildrenArticle, bool) {
+	return v, true
+}
+func (v *InterfaceListFieldRootTopicChildrenArticle) GetContentVideo() (*InterfaceListFieldRootTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceListFieldRootTopicChildrenArticle) GetContentTopic() (*InterfaceListFieldRootTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceListFieldRootTopicChildrenVideo) implementsGraphQLInterfaceInterfaceListFieldRootTopicChildrenContent() {
 }
+func (v *InterfaceListFieldRootTopicChildrenVideo) GetContentArticle() (*InterfaceListFieldRootTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceListFieldRootTopicChildrenVideo) GetContentVideo() (*InterfaceListFieldRootTopicChildrenVideo, bool) {
+	return v, true
+}
+func (v *InterfaceListFieldRootTopicChildrenVideo) GetContentTopic() (*InterfaceListFieldRootTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceListFieldRootTopicChildrenTopic) implementsGraphQLInterfaceInterfaceListFieldRootTopicChildrenContent() {
+}
+func (v *InterfaceListFieldRootTopicChildrenTopic) GetContentArticle() (*InterfaceListFieldRootTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceListFieldRootTopicChildrenTopic) GetContentVideo() (*InterfaceListFieldRootTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceListFieldRootTopicChildrenTopic) GetContentTopic() (*InterfaceListFieldRootTopicChildrenTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceListFieldRootTopicChildrenContent(b []byte, v *InterfaceListFieldRootTopicChildrenContent) error {
@@ -409,13 +439,43 @@ type InterfaceListFieldWithPointerTopicChildrenContent interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*InterfaceListFieldWithPointerTopicChildrenArticle, bool)
+	GetContentVideo() (*InterfaceListFieldWithPointerTopicChildrenVideo, bool)
+	GetContentTopic() (*InterfaceListFieldWithPointerTopicChildrenTopic, bool)
 }
 
 func (v *InterfaceListFieldWithPointerTopicChildrenArticle) implementsGraphQLInterfaceInterfaceListFieldWithPointerTopicChildrenContent() {
 }
+func (v *InterfaceListFieldWithPointerTopicChildrenArticle) GetContentArticle() (*InterfaceListFieldWithPointerTopicChildrenArticle, bool) {
+	return v, true
+}
+func (v *InterfaceListFieldWithPointerTopicChildrenArticle) GetContentVideo() (*InterfaceListFieldWithPointerTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceListFieldWithPointerTopicChildrenArticle) GetContentTopic() (*InterfaceListFieldWithPointerTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceListFieldWithPointerTopicChildrenVideo) implementsGraphQLInterfaceInterfaceListFieldWithPointerTopicChildrenContent() {
 }
+func (v *InterfaceListFieldWithPointerTopicChildrenVideo) GetContentArticle() (*InterfaceListFieldWithPointerTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceListFieldWithPointerTopicChildrenVideo) GetContentVideo() (*InterfaceListFieldWithPointerTopicChildrenVideo, bool) {
+	return v, true
+}
+func (v *InterfaceListFieldWithPointerTopicChildrenVideo) GetContentTopic() (*InterfaceListFieldWithPointerTopicChildrenTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceListFieldWithPointerTopicChildrenTopic) implementsGraphQLInterfaceInterfaceListFieldWithPointerTopicChildrenContent() {
+}
+func (v *InterfaceListFieldWithPointerTopicChildrenTopic) GetContentArticle() (*InterfaceListFieldWithPointerTopicChildrenArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceListFieldWithPointerTopicChildrenTopic) GetContentVideo() (*InterfaceListFieldWithPointerTopicChildrenVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceListFieldWithPointerTopicChildrenTopic) GetContentTopic() (*InterfaceListFieldWithPointerTopicChildrenTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceListFieldWithPointerTopicChildrenContent(b []byte, v *InterfaceListFieldWithPointerTopicChildrenContent) error {

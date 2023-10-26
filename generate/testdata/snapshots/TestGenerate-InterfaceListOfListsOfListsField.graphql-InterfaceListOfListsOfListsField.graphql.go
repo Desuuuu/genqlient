@@ -30,13 +30,43 @@ type InterfaceListOfListOfListsFieldListOfListsOfListsOfContent interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() string
+	GetContentArticle() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentArticle, bool)
+	GetContentVideo() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentVideo, bool)
+	GetContentTopic() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentTopic, bool)
 }
 
 func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentArticle) implementsGraphQLInterfaceInterfaceListOfListOfListsFieldListOfListsOfListsOfContent() {
 }
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentArticle) GetContentArticle() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentArticle, bool) {
+	return v, true
+}
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentArticle) GetContentVideo() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentArticle) GetContentTopic() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentVideo) implementsGraphQLInterfaceInterfaceListOfListOfListsFieldListOfListsOfListsOfContent() {
 }
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentVideo) GetContentArticle() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentVideo) GetContentVideo() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentVideo, bool) {
+	return v, true
+}
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentVideo) GetContentTopic() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentTopic) implementsGraphQLInterfaceInterfaceListOfListOfListsFieldListOfListsOfListsOfContent() {
+}
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentTopic) GetContentArticle() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentTopic) GetContentVideo() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContentTopic) GetContentTopic() (*InterfaceListOfListOfListsFieldListOfListsOfListsOfContentTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceListOfListOfListsFieldListOfListsOfListsOfContent(b []byte, v *InterfaceListOfListOfListsFieldListOfListsOfListsOfContent) error {
@@ -395,13 +425,43 @@ type InterfaceListOfListOfListsFieldWithPointerContent interface {
 	GetId() *testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() *string
+	GetContentArticle() (*InterfaceListOfListOfListsFieldWithPointerArticle, bool)
+	GetContentVideo() (*InterfaceListOfListOfListsFieldWithPointerVideo, bool)
+	GetContentTopic() (*InterfaceListOfListOfListsFieldWithPointerTopic, bool)
 }
 
 func (v *InterfaceListOfListOfListsFieldWithPointerArticle) implementsGraphQLInterfaceInterfaceListOfListOfListsFieldWithPointerContent() {
 }
+func (v *InterfaceListOfListOfListsFieldWithPointerArticle) GetContentArticle() (*InterfaceListOfListOfListsFieldWithPointerArticle, bool) {
+	return v, true
+}
+func (v *InterfaceListOfListOfListsFieldWithPointerArticle) GetContentVideo() (*InterfaceListOfListOfListsFieldWithPointerVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceListOfListOfListsFieldWithPointerArticle) GetContentTopic() (*InterfaceListOfListOfListsFieldWithPointerTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceListOfListOfListsFieldWithPointerVideo) implementsGraphQLInterfaceInterfaceListOfListOfListsFieldWithPointerContent() {
 }
+func (v *InterfaceListOfListOfListsFieldWithPointerVideo) GetContentArticle() (*InterfaceListOfListOfListsFieldWithPointerArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceListOfListOfListsFieldWithPointerVideo) GetContentVideo() (*InterfaceListOfListOfListsFieldWithPointerVideo, bool) {
+	return v, true
+}
+func (v *InterfaceListOfListOfListsFieldWithPointerVideo) GetContentTopic() (*InterfaceListOfListOfListsFieldWithPointerTopic, bool) {
+	return nil, false
+}
 func (v *InterfaceListOfListOfListsFieldWithPointerTopic) implementsGraphQLInterfaceInterfaceListOfListOfListsFieldWithPointerContent() {
+}
+func (v *InterfaceListOfListOfListsFieldWithPointerTopic) GetContentArticle() (*InterfaceListOfListOfListsFieldWithPointerArticle, bool) {
+	return nil, false
+}
+func (v *InterfaceListOfListOfListsFieldWithPointerTopic) GetContentVideo() (*InterfaceListOfListOfListsFieldWithPointerVideo, bool) {
+	return nil, false
+}
+func (v *InterfaceListOfListOfListsFieldWithPointerTopic) GetContentTopic() (*InterfaceListOfListOfListsFieldWithPointerTopic, bool) {
+	return v, true
 }
 
 func __unmarshalInterfaceListOfListOfListsFieldWithPointerContent(b []byte, v *InterfaceListOfListOfListsFieldWithPointerContent) error {

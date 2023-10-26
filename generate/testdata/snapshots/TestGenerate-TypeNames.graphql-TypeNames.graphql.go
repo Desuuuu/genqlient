@@ -30,11 +30,41 @@ type Item interface {
 	GetId() testutil.ID
 	// GetName returns the interface-field "name" from its implementation.
 	GetName() NameType
+	GetContentArticle() (*ItemArticle, bool)
+	GetContentVideo() (*ItemVideo, bool)
+	GetContentTopic() (*ItemTopic, bool)
 }
 
 func (v *ItemArticle) implementsGraphQLInterfaceItem() {}
-func (v *ItemVideo) implementsGraphQLInterfaceItem()   {}
-func (v *ItemTopic) implementsGraphQLInterfaceItem()   {}
+func (v *ItemArticle) GetContentArticle() (*ItemArticle, bool) {
+	return v, true
+}
+func (v *ItemArticle) GetContentVideo() (*ItemVideo, bool) {
+	return nil, false
+}
+func (v *ItemArticle) GetContentTopic() (*ItemTopic, bool) {
+	return nil, false
+}
+func (v *ItemVideo) implementsGraphQLInterfaceItem() {}
+func (v *ItemVideo) GetContentArticle() (*ItemArticle, bool) {
+	return nil, false
+}
+func (v *ItemVideo) GetContentVideo() (*ItemVideo, bool) {
+	return v, true
+}
+func (v *ItemVideo) GetContentTopic() (*ItemTopic, bool) {
+	return nil, false
+}
+func (v *ItemTopic) implementsGraphQLInterfaceItem() {}
+func (v *ItemTopic) GetContentArticle() (*ItemArticle, bool) {
+	return nil, false
+}
+func (v *ItemTopic) GetContentVideo() (*ItemVideo, bool) {
+	return nil, false
+}
+func (v *ItemTopic) GetContentTopic() (*ItemTopic, bool) {
+	return v, true
+}
 
 func __unmarshalItem(b []byte, v *Item) error {
 	if string(b) == "null" {

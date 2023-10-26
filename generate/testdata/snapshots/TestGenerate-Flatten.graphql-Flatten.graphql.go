@@ -38,11 +38,41 @@ type ContentFields interface {
 	GetName() string
 	// GetUrl returns the interface-field "url" from its implementation.
 	GetUrl() string
+	GetContentFieldsArticle() (*ContentFieldsArticle, bool)
+	GetContentFieldsVideo() (*ContentFieldsVideo, bool)
+	GetContentFieldsTopic() (*ContentFieldsTopic, bool)
 }
 
 func (v *ContentFieldsArticle) implementsGraphQLInterfaceContentFields() {}
-func (v *ContentFieldsVideo) implementsGraphQLInterfaceContentFields()   {}
-func (v *ContentFieldsTopic) implementsGraphQLInterfaceContentFields()   {}
+func (v *ContentFieldsArticle) GetContentFieldsArticle() (*ContentFieldsArticle, bool) {
+	return v, true
+}
+func (v *ContentFieldsArticle) GetContentFieldsVideo() (*ContentFieldsVideo, bool) {
+	return nil, false
+}
+func (v *ContentFieldsArticle) GetContentFieldsTopic() (*ContentFieldsTopic, bool) {
+	return nil, false
+}
+func (v *ContentFieldsVideo) implementsGraphQLInterfaceContentFields() {}
+func (v *ContentFieldsVideo) GetContentFieldsArticle() (*ContentFieldsArticle, bool) {
+	return nil, false
+}
+func (v *ContentFieldsVideo) GetContentFieldsVideo() (*ContentFieldsVideo, bool) {
+	return v, true
+}
+func (v *ContentFieldsVideo) GetContentFieldsTopic() (*ContentFieldsTopic, bool) {
+	return nil, false
+}
+func (v *ContentFieldsTopic) implementsGraphQLInterfaceContentFields() {}
+func (v *ContentFieldsTopic) GetContentFieldsArticle() (*ContentFieldsArticle, bool) {
+	return nil, false
+}
+func (v *ContentFieldsTopic) GetContentFieldsVideo() (*ContentFieldsVideo, bool) {
+	return nil, false
+}
+func (v *ContentFieldsTopic) GetContentFieldsTopic() (*ContentFieldsTopic, bool) {
+	return v, true
+}
 
 func __unmarshalContentFields(b []byte, v *ContentFields) error {
 	if string(b) == "null" {
